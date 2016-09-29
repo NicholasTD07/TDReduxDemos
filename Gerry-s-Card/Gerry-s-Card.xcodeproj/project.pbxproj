@@ -14,8 +14,8 @@
 		750DB76D1D9BE024009C21C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 750DB76B1D9BE024009C21C1 /* LaunchScreen.storyboard */; };
 		750DB7781D9BE024009C21C1 /* Gerry_s_CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750DB7771D9BE024009C21C1 /* Gerry_s_CardTests.swift */; };
 		753785A01D9BE0A3004703E0 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537859F1D9BE0A3004703E0 /* Redux.swift */; };
-		753785A31D9BE0B6004703E0 /* TDRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753785A21D9BE0B6004703E0 /* TDRedux.framework */; };
 		753785A51D9BE210004703E0 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753785A41D9BE210004703E0 /* ViewModels.swift */; };
+		753785A81D9D2900004703E0 /* TDRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753785A71D9D2900004703E0 /* TDRedux.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 		7537859F1D9BE0A3004703E0 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		753785A21D9BE0B6004703E0 /* TDRedux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TDRedux.framework; path = "../../TDRedux.swift/build/Debug-iphoneos/TDRedux.framework"; sourceTree = "<group>"; };
 		753785A41D9BE210004703E0 /* ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		753785A71D9D2900004703E0 /* TDRedux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TDRedux.framework; path = "../TDRedux.swift/build/Debug-iphoneos/TDRedux.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753785A31D9BE0B6004703E0 /* TDRedux.framework in Frameworks */,
+				753785A81D9D2900004703E0 /* TDRedux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +106,7 @@
 		753785A11D9BE0B6004703E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				753785A71D9D2900004703E0 /* TDRedux.framework */,
 				753785A21D9BE0B6004703E0 /* TDRedux.framework */,
 			);
 			name = Frameworks;

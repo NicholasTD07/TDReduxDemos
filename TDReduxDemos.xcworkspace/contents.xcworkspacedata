@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../TDRedux.swift/TDRedux.xcodeproj">
+      location = "group:TDRedux.swift/TDRedux.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:Gerry-s-Card.xcodeproj">
+      location = "container:Gerry-s-Card/Gerry-s-Card.xcodeproj">
    </FileRef>
 </Workspace>
