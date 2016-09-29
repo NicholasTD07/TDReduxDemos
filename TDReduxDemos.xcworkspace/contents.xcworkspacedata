@@ -4,10 +4,14 @@
    <FileRef
       location = "group:TDRedux.swift/TDRedux.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Counter/Counter.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "container:Gerry-s-Card/Gerry-s-Card.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Single State Apps">
+      <FileRef
+         location = "container:Gerry-s-Card/Gerry-s-Card.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Counter/Counter.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
