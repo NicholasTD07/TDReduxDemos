@@ -12,6 +12,8 @@
 		753785BB1D9D42CE004703E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753785B91D9D42CE004703E0 /* Main.storyboard */; };
 		753785BD1D9D42CE004703E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753785BC1D9D42CE004703E0 /* Assets.xcassets */; };
 		753785C01D9D42CE004703E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753785BE1D9D42CE004703E0 /* LaunchScreen.storyboard */; };
+		753785CA1D9D44B6004703E0 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753785C91D9D44B6004703E0 /* Redux.swift */; };
+		753785CD1D9D44C0004703E0 /* TDRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753785CC1D9D44C0004703E0 /* TDRedux.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		753785BC1D9D42CE004703E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		753785BF1D9D42CE004703E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		753785C11D9D42CE004703E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		753785C91D9D44B6004703E0 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
+		753785CC1D9D44C0004703E0 /* TDRedux.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TDRedux.framework; path = "../../../Library/Developer/Xcode/DerivedData/TDReduxDemos-ewthxlzhvpimencooatqulczmpbd/Build/Products/Debug-iphonesimulator/TDRedux.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753785CD1D9D44C0004703E0 /* TDRedux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				753785B41D9D42CE004703E0 /* Counter */,
 				753785B31D9D42CE004703E0 /* Products */,
+				753785CB1D9D44C0004703E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +60,31 @@
 		753785B41D9D42CE004703E0 /* Counter */ = {
 			isa = PBXGroup;
 			children = (
-				753785B51D9D42CE004703E0 /* AppDelegate.swift */,
+				753785C91D9D44B6004703E0 /* Redux.swift */,
 				753785B71D9D42CE004703E0 /* ViewController.swift */,
+				753785C81D9D44A2004703E0 /* Everything Else */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		753785C81D9D44A2004703E0 /* Everything Else */ = {
+			isa = PBXGroup;
+			children = (
+				753785B51D9D42CE004703E0 /* AppDelegate.swift */,
 				753785B91D9D42CE004703E0 /* Main.storyboard */,
 				753785BC1D9D42CE004703E0 /* Assets.xcassets */,
 				753785BE1D9D42CE004703E0 /* LaunchScreen.storyboard */,
 				753785C11D9D42CE004703E0 /* Info.plist */,
 			);
-			path = Counter;
+			name = "Everything Else";
+			sourceTree = "<group>";
+		};
+		753785CB1D9D44C0004703E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				753785CC1D9D44C0004703E0 /* TDRedux.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +161,7 @@
 			files = (
 				753785B81D9D42CE004703E0 /* ViewController.swift in Sources */,
 				753785B61D9D42CE004703E0 /* AppDelegate.swift in Sources */,
+				753785CA1D9D44B6004703E0 /* Redux.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
