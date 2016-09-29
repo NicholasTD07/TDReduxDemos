@@ -10,16 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
+    @IBOutlet weak var counterLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.addButton.addTarget(self, action: #selector(ViewController.addButtonTapped), for: .touchUpInside)
+        self.minusButton.addTarget(self, action: #selector(ViewController.minusButtonTapped), for: .touchUpInside)
+
+        store.subscribe { [weak self] store in
+            guard let `self` = self else { return }
+
+            self.counterLabel.text = "\(store.state)"
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc private func addButtonTapped() {
+        store.dispatch(CounterActions.increase)
     }
 
-
+    @objc private func minusButtonTapped() {
+        store.dispatch(CounterActions.decrease)
+    }
 }
 
