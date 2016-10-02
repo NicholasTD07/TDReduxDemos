@@ -16,4 +16,8 @@ class AddToDoViewController: UIViewController {
     @IBAction func done() {
         titleHandler?(titleTextFiled.text)
     }
+
+    override func viewDidLoad() {
+        self.titleTextFiled.becomeFirstResponder()
+    }
 }
