@@ -22,7 +22,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJF-tL-b88">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Ek3-YD-t9f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Ek3-YD-t9f">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ek3-YD-t9f" id="d09-4X-Pku">
@@ -40,11 +40,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rJF-tL-b88" secondAttribute="bottom" id="5w4-gx-ql8"/>
-                            <constraint firstItem="rJF-tL-b88" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8C3-7V-doq"/>
                             <constraint firstItem="rJF-tL-b88" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fdh-cI-vOb"/>
                             <constraint firstAttribute="trailing" secondItem="rJF-tL-b88" secondAttribute="trailing" id="pQU-DP-BvU"/>
+                            <constraint firstItem="rJF-tL-b88" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xt9-zg-WEz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rJF-tL-b88" id="n3B-6f-4XI"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-50.399999999999999" y="212.74362818590706"/>

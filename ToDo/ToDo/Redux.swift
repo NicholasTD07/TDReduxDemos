@@ -27,7 +27,14 @@ struct ToDo {
 }
 
 struct ToDoState {
-    static let initial = ToDoState(todos: [])
+    static let initial = demo // ToDoState(todos: [])
+    static let demo = ToDoState(todos:
+        [
+            ("Buy milk", true),
+            ("Take out garbage", false),
+            ("Cancel Netflix", false),
+        ].map{ ToDo(done: $0.1, title: $0.0) }
+    )
 
     let todos: [ToDo]
 }
@@ -61,3 +68,5 @@ let reducer: Store.Reducer = Reducer(initialState: .initial) { (state, action: T
         )
     }
 }
+
+let store = Store.init(with: reducer)
