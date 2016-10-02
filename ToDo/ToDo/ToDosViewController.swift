@@ -41,7 +41,6 @@ extension ViewController: UITableViewDelegate {
 }
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -49,6 +48,18 @@ class ViewController: UIViewController {
 
         store.subscribe { [weak self] (store) in
             self?.tableView.reloadData()
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dvc = segue.destination as? AddToDoViewController else { return }
+
+        dvc.titleHandler = { [weak self] title in
+            guard let title = title else { return }
+
+            store.dispatch(ToDoActions.add(title: title))
+
+            self?.navigationController?.popViewController(animated: true)
         }
     }
 }
