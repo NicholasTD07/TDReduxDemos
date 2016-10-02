@@ -39,8 +39,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.item(at: indexPath)
-        store.dispatch(ToDoActions.toggle(with: item.id))
+        store.dispatch(ToDoActions.toggle(with: item(at: indexPath).id))
     }
 }
 
