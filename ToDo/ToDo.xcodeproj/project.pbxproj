@@ -18,7 +18,23 @@
 		7537860A1DA10D2B004703E0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753786091DA10D2B004703E0 /* Models.swift */; };
 		7537860C1DA10DDF004703E0 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537860B1DA10DDF004703E0 /* Reducers.swift */; };
 		7537860E1DA10E66004703E0 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537860D1DA10E66004703E0 /* Actions.swift */; };
+		75CBCE021DA12D6300190D6A /* TDRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CBCE011DA12D6300190D6A /* TDRedux.framework */; };
+		75CBCE031DA12D6300190D6A /* TDRedux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75CBCE011DA12D6300190D6A /* TDRedux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		75CBCE041DA12D6300190D6A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				75CBCE031DA12D6300190D6A /* TDRedux.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		753785ED1DA09000004703E0 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +50,7 @@
 		753786091DA10D2B004703E0 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		7537860B1DA10DDF004703E0 /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
 		7537860D1DA10E66004703E0 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		75CBCE011DA12D6300190D6A /* TDRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TDRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75CBCE021DA12D6300190D6A /* TDRedux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,7 @@
 		753786021DA09B40004703E0 /* Everything Else */ = {
 			isa = PBXGroup;
 			children = (
+				75CBCE011DA12D6300190D6A /* TDRedux.framework */,
 				753785F01DA09000004703E0 /* AppDelegate.swift */,
 				753785F41DA09000004703E0 /* Main.storyboard */,
 				753785F71DA09000004703E0 /* Assets.xcassets */,
@@ -100,6 +119,7 @@
 				753785E91DA09000004703E0 /* Sources */,
 				753785EA1DA09000004703E0 /* Frameworks */,
 				753785EB1DA09000004703E0 /* Resources */,
+				75CBCE041DA12D6300190D6A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
