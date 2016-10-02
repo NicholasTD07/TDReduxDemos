@@ -54,14 +54,22 @@
 		753785EF1DA09000004703E0 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				753785F01DA09000004703E0 /* AppDelegate.swift */,
 				753785F21DA09000004703E0 /* ViewController.swift */,
+				753786021DA09B40004703E0 /* Everything Else */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		753786021DA09B40004703E0 /* Everything Else */ = {
+			isa = PBXGroup;
+			children = (
+				753785F01DA09000004703E0 /* AppDelegate.swift */,
 				753785F41DA09000004703E0 /* Main.storyboard */,
 				753785F71DA09000004703E0 /* Assets.xcassets */,
 				753785F91DA09000004703E0 /* LaunchScreen.storyboard */,
 				753785FC1DA09000004703E0 /* Info.plist */,
 			);
-			path = ToDo;
+			name = "Everything Else";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +305,7 @@
 				753786011DA09000004703E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
