@@ -9,10 +9,20 @@
 import Foundation
 import TDRedux
 
+
+enum ToDoFilter: Int {
+    case todo
+    case all
+    case done
+    case archived
+}
+
 enum ToDoActions: Action {
     case add(title: String)
-    case toggle(with: UUID)
     case remove(with: UUID)
+
+    case toggle(with: UUID)
+    case archive(with: UUID)
 
     case filter(with: ToDoFilter)
 }

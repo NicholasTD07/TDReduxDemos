@@ -12,22 +12,40 @@ struct ToDo {
     let id: UUID
     let done: Bool
     let title: String
+    let archived: Bool
     let createdAt: CFAbsoluteTime
 
-    init(id: UUID = UUID(), done: Bool = false, title: String, createdAt: CFAbsoluteTime = CFAbsoluteTimeGetCurrent()) {
+    init(
+        id: UUID = UUID(),
+        done: Bool = false,
+        title: String,
+        archived: Bool = false,
+        createdAt: CFAbsoluteTime = CFAbsoluteTimeGetCurrent())
+    {
         self.id = id
         self.done = done
         self.title = title
+        self.archived = archived
         self.createdAt = createdAt
     }
 
     func toggled() -> ToDo {
-        return ToDo(id: self.id, done: !self.done, title: self.title)
+        return ToDo(
+            id: id,
+            done: !done,
+            title: title,
+            archived: archived,
+            createdAt: createdAt
+        )
     }
-}
 
-enum ToDoFilter: Int {
-    case todo
-    case all
-    case done
+    func archived(_ value: Bool) -> ToDo {
+        return ToDo(
+            id: id,
+            done: done,
+            title: title,
+            archived: value,
+            createdAt: createdAt
+        )
+    }
 }

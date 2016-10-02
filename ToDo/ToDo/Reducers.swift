@@ -24,6 +24,8 @@ let reducer: Store.Reducer = Reducer(initialState: .initial) { (state, action: T
         return removeToDo(with: id, in: state)
     case let .filter(filter):
         return filterToDos(with: filter, in: state)
+    case let .archive(id):
+        return archiveToDo(with: id, in: state)
     }
 }
 
@@ -59,3 +61,15 @@ private func filterToDos(with filter: ToDoFilter, in state: State) -> State {
     return ToDoState(todos: state.todos, filter: filter)
 }
 
+private func archiveToDo(with id: UUID, in state: State) -> State {
+    return ToDoState(
+        todos: state.todos.map { todo -> ToDo in
+            if todo.id == id {
+                return todo.archived(true)
+            } else {
+                return todo
+            }
+        },
+        filter: state.filter
+    )
+}
