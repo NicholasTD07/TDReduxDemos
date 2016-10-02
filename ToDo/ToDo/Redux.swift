@@ -14,11 +14,13 @@ struct ToDo {
     let id: UUID
     let done: Bool
     let title: String
+    let createdAt: CFAbsoluteTime
 
-    init(id: UUID = UUID(), done: Bool = false, title: String) {
+    init(id: UUID = UUID(), done: Bool = false, title: String, createdAt: CFAbsoluteTime = CFAbsoluteTimeGetCurrent()) {
         self.id = id
         self.done = done
         self.title = title
+        self.createdAt = createdAt
     }
 
     func toggled() -> ToDo {
@@ -48,14 +50,21 @@ struct ToDoState {
 
     let todos: [ToDo]
     let filter: ToDoFilter
-    var filteredToDos: [ToDo] {
+    var filteredToDos: [[ToDo]] {
         switch filter {
         case .todo:
-            return todos.filter { $0.done == false }
+            return [todos.filter { $0.done == false }]
         case .all:
-            return todos
+            return [ // sorted by done and creation time
+                todos
+                    .filter { $0.done == false }
+                    .sorted { $0.createdAt > $1.createdAt },
+                todos
+                    .filter { $0.done == true }
+                    .sorted { $0.createdAt > $1.createdAt },
+            ]
         case .done:
-            return todos.filter { $0.done == true }
+            return [todos.filter { $0.done == true }]
         }
     }
 }

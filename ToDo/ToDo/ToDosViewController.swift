@@ -21,18 +21,18 @@ extension ViewController: UITableViewDataSource {
     }
 
     fileprivate func item(at indexPath: IndexPath) -> ToDo {
-        return items[indexPath.row]
+        return items[indexPath.section][indexPath.row]
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
 
-    var items: [ToDo] {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items[section].count
+    }
+
+    var items: [[ToDo]] {
         return store.state.filteredToDos
     }
 }
