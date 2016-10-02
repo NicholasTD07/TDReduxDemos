@@ -14,6 +14,7 @@
 		753785FB1DA09000004703E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753785F91DA09000004703E0 /* LaunchScreen.storyboard */; };
 		753786041DA0A139004703E0 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753786031DA0A139004703E0 /* Redux.swift */; };
 		753786061DA0E127004703E0 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753786051DA0E127004703E0 /* AddToDoViewController.swift */; };
+		753786081DA10B6C004703E0 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753786071DA10B6C004703E0 /* ViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		753785FC1DA09000004703E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753786031DA0A139004703E0 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		753786051DA0E127004703E0 /* AddToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		753786071DA10B6C004703E0 /* ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				753785F21DA09000004703E0 /* ToDosViewController.swift */,
 				753786051DA0E127004703E0 /* AddToDoViewController.swift */,
 				753786021DA09B40004703E0 /* Everything Else */,
+				753786071DA10B6C004703E0 /* ViewModels.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				753786061DA0E127004703E0 /* AddToDoViewController.swift in Sources */,
 				753785F31DA09000004703E0 /* ToDosViewController.swift in Sources */,
+				753786081DA10B6C004703E0 /* ViewModels.swift in Sources */,
 				753785F11DA09000004703E0 /* AppDelegate.swift in Sources */,
 				753786041DA0A139004703E0 /* Redux.swift in Sources */,
 			);

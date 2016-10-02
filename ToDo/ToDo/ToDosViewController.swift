@@ -46,6 +46,7 @@ extension ViewController: UITableViewDelegate {
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     @IBAction func filterChanged(_ segmented: UISegmentedControl) {
         let filter = ToDoFilter(rawValue: segmented.selectedSegmentIndex)!
@@ -55,6 +56,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        ToDoFilter.allValues.enumerated().forEach { index, filter in
+            segmentedControl.setTitle(filter.displayText, forSegmentAt: index)
+        }
 
         store.subscribe { [weak self] (store) in
             self?.tableView.reloadData()

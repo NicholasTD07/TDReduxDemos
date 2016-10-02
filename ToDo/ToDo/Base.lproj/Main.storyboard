@@ -66,6 +66,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentedControl" destination="krY-f5-Ft8" id="yFy-Gb-TRD"/>
                         <outlet property="tableView" destination="rJF-tL-b88" id="n3B-6f-4XI"/>
                     </connections>
                 </viewController>
