@@ -21,7 +21,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     fileprivate func item(at indexPath: IndexPath) -> ToDo {
-        return store.state.todos[indexPath.row]
+        return items[indexPath.row]
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,7 +29,11 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return store.state.todos.count
+        return items.count
+    }
+
+    var items: [ToDo] {
+        return store.state.filteredToDos
     }
 }
 
@@ -42,6 +46,12 @@ extension ViewController: UITableViewDelegate {
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+
+    @IBAction func filterChanged(_ segmented: UISegmentedControl) {
+        let filter = ToDoFilter(rawValue: segmented.selectedSegmentIndex)!
+
+        store.dispatch(ToDoActions.filter(with: filter))
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

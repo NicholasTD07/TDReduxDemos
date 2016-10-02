@@ -51,10 +51,13 @@
                             <rect key="frame" x="113" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="Done"/>
-                                <segment title="All"/>
                                 <segment title="ToDo"/>
+                                <segment title="All"/>
+                                <segment title="Done"/>
                             </segments>
+                            <connections>
+                                <action selector="filterChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PoK-7c-VOh"/>
+                            </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ivK-wQ-RWi">
                             <connections>
