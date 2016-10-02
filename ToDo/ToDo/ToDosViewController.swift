@@ -41,6 +41,18 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         store.dispatch(ToDoActions.toggle(with: item(at: indexPath).id))
     }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let id = item(at: indexPath).id
+
+        let archive = UITableViewRowAction(
+            style: UITableViewRowActionStyle.destructive,
+            title: "Archive") { (action, indexPath) in
+                store.dispatch(ToDoActions.archive(with: id))
+        }
+
+        return [archive]
+    }
 }
 
 class ViewController: UIViewController {

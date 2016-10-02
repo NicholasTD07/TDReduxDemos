@@ -12,9 +12,7 @@ extension ToDoState {
     var filteredToDos: [[ToDo]] {
         switch filter {
         case .todo:
-            return [todos.filter {
-                $0.done == false && $0.archived == false
-                }]
+            return [todos.filter { $0.done == false && $0.archived == false }]
         case .all:
             return [ // sorted by done and creation time
                 todos
@@ -25,7 +23,7 @@ extension ToDoState {
                     .sorted { $0.createdAt > $1.createdAt },
             ]
         case .done:
-            return [todos.filter { $0.done == true }]
+            return [todos.filter { $0.done == true && $0.archived == false }]
         case .archived:
             return [todos.filter { $0.archived == true }]
         }
