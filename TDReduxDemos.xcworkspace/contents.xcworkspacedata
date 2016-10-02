@@ -4,6 +4,9 @@
    <FileRef
       location = "group:TDRedux.swift/TDRedux.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:ToDo/ToDo.xcodeproj">
+   </FileRef>
    <Group
       location = "container:"
       name = "Simple State Apps">
