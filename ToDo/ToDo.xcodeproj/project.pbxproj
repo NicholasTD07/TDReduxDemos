@@ -12,6 +12,7 @@
 		753785F61DA09000004703E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753785F41DA09000004703E0 /* Main.storyboard */; };
 		753785F81DA09000004703E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753785F71DA09000004703E0 /* Assets.xcassets */; };
 		753785FB1DA09000004703E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753785F91DA09000004703E0 /* LaunchScreen.storyboard */; };
+		753786041DA0A139004703E0 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753786031DA0A139004703E0 /* Redux.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		753785F71DA09000004703E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		753785FA1DA09000004703E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		753785FC1DA09000004703E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		753786031DA0A139004703E0 /* Redux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		753785EF1DA09000004703E0 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				753786031DA0A139004703E0 /* Redux.swift */,
 				753785F21DA09000004703E0 /* ViewController.swift */,
 				753786021DA09B40004703E0 /* Everything Else */,
 			);
@@ -146,6 +149,7 @@
 			files = (
 				753785F31DA09000004703E0 /* ViewController.swift in Sources */,
 				753785F11DA09000004703E0 /* AppDelegate.swift in Sources */,
+				753786041DA0A139004703E0 /* Redux.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
