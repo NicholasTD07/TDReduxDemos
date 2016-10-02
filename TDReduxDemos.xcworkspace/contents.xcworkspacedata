@@ -6,7 +6,7 @@
    </FileRef>
    <Group
       location = "container:"
-      name = "Single State Apps">
+      name = "Simple State Apps">
       <FileRef
          location = "container:Gerry-s-Card/Gerry-s-Card.xcodeproj">
       </FileRef>
