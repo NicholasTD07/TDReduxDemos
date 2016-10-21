@@ -62,7 +62,7 @@ private func addToDo(title: String, to state: State) -> State {
     )
 }
 
-private func toggleToDo(with id: UUID, in state: State) -> State {
+private func toggleToDo(with id: ToDo.Id, in state: State) -> State {
     return ToDoState(
         fetchState: state.fetchState,
         todos: state.todos.map { todo -> ToDo in
@@ -76,7 +76,7 @@ private func toggleToDo(with id: UUID, in state: State) -> State {
     )
 }
 
-private func removeToDo(with id: UUID, in state: State) -> State {
+private func removeToDo(with id: ToDo.Id, in state: State) -> State {
     return ToDoState(
         fetchState: state.fetchState,
         todos: state.todos.filter { $0.id != id },
@@ -92,7 +92,7 @@ private func filterToDos(with filter: ToDoFilter, in state: State) -> State {
     )
 }
 
-private func archiveToDo(with id: UUID, in state: State) -> State {
+private func archiveToDo(with id: ToDo.Id, in state: State) -> State {
     return ToDoState(
         fetchState: state.fetchState,
         todos: state.todos.map { todo -> ToDo in

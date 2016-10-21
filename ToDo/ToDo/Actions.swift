@@ -23,10 +23,10 @@ enum FetchActions {
 
 enum ToDoActions: Action {
     case add(title: String)
-    case remove(with: UUID)
+    case remove(with: ToDo.Id)
 
-    case toggle(with: UUID)
-    case archive(with: UUID)
+    case toggle(with: ToDo.Id)
+    case archive(with: ToDo.Id)
 
     case filter(with: ToDoFilter)
 }

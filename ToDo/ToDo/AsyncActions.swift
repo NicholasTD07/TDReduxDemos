@@ -9,11 +9,7 @@
 struct AsyncActions {
     private let api: ToDoAPI
 
-    func fetchToDos(dispatch: Store.Dispatch) {
-//        dispatch
-
-        api.fetchToDos { (result) in
-//            <#code#>
-        }
+    init(api: ToDoAPI) {
+        self.api = api
     }
 }

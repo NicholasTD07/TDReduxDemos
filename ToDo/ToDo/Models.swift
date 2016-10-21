@@ -15,16 +15,17 @@ enum FetchState {
     case failed
 }
 
-
 struct ToDo {
-    let id: UUID
+    typealias Id = UUID
+    typealias Time = CFAbsoluteTime
+    let id: ToDo.Id
     let done: Bool
     let title: String
     let archived: Bool
     let createdAt: CFAbsoluteTime
 
     init(
-        id: UUID = UUID(),
+        id: ToDo.Id = ToDo.Id(),
         done: Bool = false,
         title: String,
         archived: Bool = false,
