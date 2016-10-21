@@ -63,6 +63,9 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+private let asyncActions = AsyncActions(api: MockAPI())
+private let fetchToDos: Store.AsyncAction = asyncActions.fetchToDos
+
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -79,6 +82,8 @@ class ViewController: UIViewController {
         ToDoFilter.allValues.enumerated().forEach { index, filter in
             segmentedControl.setTitle(filter.displayText, forSegmentAt: index)
         }
+
+        store.dispatch(asyncAction: fetchToDos)
 
         store.subscribe { [weak self] in
             self?.tableView.reloadData()

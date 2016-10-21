@@ -12,4 +12,15 @@ struct AsyncActions {
     init(api: ToDoAPI) {
         self.api = api
     }
+
+    func fetchToDos(dispatch: @escaping Store.Dispatch) {
+        api.fetchToDos { result in
+            switch result {
+            case let .success(todos):
+                dispatch(ToDoActions.update(with: todos))
+            case .failure:
+                ()
+            }
+        }
+    }
 }

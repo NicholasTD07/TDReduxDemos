@@ -8,9 +8,31 @@
 
 import Foundation
 
+enum Result<Value, ErrorType: Error> {
+    case success(value: Value)
+    case failure(erorr: ErrorType)
+
+    static func value(_ value: Value) -> Result {
+        return Result.success(value: value)
+    }
+}
+
+enum APIError: Error {
+
+}
+
+typealias ToDos = [ToDo]
+
 protocol ToDoAPI {
+    func fetchToDos(completion: @escaping (Result<ToDos, APIError>) -> ())
 }
 
 class MockAPI: ToDoAPI {
-    private var todos = [ToDo]()
+    private var todos = initialToDos
+
+    func fetchToDos(completion: @escaping (Result<ToDos, APIError>) -> ()) {
+        DispatchQueue.global().async {
+            completion(.value(self.todos))
+        }
+    }
 }

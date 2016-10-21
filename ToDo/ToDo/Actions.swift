@@ -15,15 +15,16 @@ enum ToDoFilter: Int {
     case archived
 }
 
-enum FetchActions {
-    case start
-    case success
-    case fail
-}
+//enum FetchActions {
+//    case start
+//    case success
+//    case fail
+//}
 
 enum ToDoActions: Action {
     case add(title: String)
     case remove(with: ToDo.Id)
+    case update(with: ToDos)
 
     case toggle(with: ToDo.Id)
     case archive(with: ToDo.Id)
