@@ -8,27 +8,22 @@
 
 extension Store {
 
-    /// Subscribe to changes of a *Store*'s *State*
-    ///
-    /// - parameter state:  A State
-    ///
-    /// - returns: Void
-    public typealias StateSubscriber = (_ state: State) -> ()
-
-    public typealias UpdateSubscriber = () -> ()
-
     /// Subcribes a *StateSubscriber* (takes a *State* rather than a *Store*)
     /// to the changes of a *Store*'s *State*
     ///
     /// - parameter subscriber: A StateSubscriber function
-    public func subscribe(with subscriber: @escaping StateSubscriber) {
+    public final func subscribe(with subscriber: @escaping StateSubscriber) {
         self.subscribe { store in
             subscriber(store.state)
         }
     }
 
-    public func subscribe(with subscriber: @escaping UpdateSubscriber) {
-        self.subscribe { (store: Store) in
+    /// The given *UpdateSubscriber* will be called
+    /// when the *State* of a *Store* changes
+    ///
+    /// - parameter subscriber: An UpdateSubscriber
+    public final func subscribe(with subscriber: @escaping UpdateSubscriber) {
+        self.subscribe { (_: Store) in
             subscriber()
         }
     }
@@ -39,7 +34,7 @@ extension Store {
     ///
     /// - parameter converter:  A function converts State to SpecificState
     /// - parameter subscriber: A SpecificStateSubscriber function
-    public func subscribe<SpecificState>(
+    public final func subscribe<SpecificState>(
         withConverter converter: @escaping (State) -> SpecificState,
         subscriber: @escaping (SpecificState) -> ()
     ) {
