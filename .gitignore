@@ -1,3 +1,5 @@
+docs/
+.build/
 build/
 *.pbxuser
 !default.pbxuser
