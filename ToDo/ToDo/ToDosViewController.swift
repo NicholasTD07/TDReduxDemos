@@ -72,7 +72,7 @@ class ViewController: UIViewController {
             segmentedControl.setTitle(filter.displayText, forSegmentAt: index)
         }
 
-        store.subscribe { [weak self] (store) in
+        store.subscribe { [weak self] in
             self?.tableView.reloadData()
         }
     }
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
 
             store.dispatch(ToDoActions.add(title: title))
 
-            self?.navigationController?.popViewController(animated: true)
+            _ = self?.navigationController?.popViewController(animated: true)
         }
     }
 }
