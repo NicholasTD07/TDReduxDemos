@@ -1,0 +1,16 @@
+PODS:
+  - TDRedux.swift (1.7.0)
+
+DEPENDENCIES:
+  - TDRedux.swift (from `~/proj/TDRedux.swift`)
+
+EXTERNAL SOURCES:
+  TDRedux.swift:
+    :path: "~/proj/TDRedux.swift"
+
+SPEC CHECKSUMS:
+  TDRedux.swift: 332641778c6c74d6ed2b6fd3e2686df10529d372
+
+PODFILE CHECKSUM: 63b87b12b95db643206f80753de91d4ec9c8dc98
+
+COCOAPODS: 1.1.1
