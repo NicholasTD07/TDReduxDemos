@@ -21,7 +21,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     fileprivate func item(at indexPath: IndexPath) -> ToDo {
-        return items[indexPath.section][indexPath.row]
+        return items[indexPath.section].todos[indexPath.row]
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,10 +29,10 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items[section].count
+        return items[section].todos.count
     }
 
-    var items: [[ToDo]] {
+    var items: [Section] {
         return store.state.filteredToDos
     }
 }
@@ -52,6 +52,14 @@ extension ViewController: UITableViewDelegate {
         }
 
         return [archive]
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if items.count > 1 {
+            return items[section].displayText
+        } else {
+            return nil
+        }
     }
 }
 
