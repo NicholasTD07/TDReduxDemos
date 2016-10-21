@@ -19,9 +19,7 @@ struct ToDoState {
             ("Buy milk", true),
             ("Take out garbage", false),
             ("Cancel Netflix", false),
-            ].map {
-                ToDo(done: $0.1, title: $0.0)
-        },
+        ].map { ToDo(done: $0.1, title: $0.0) },
         filter: .all
     )
 }
