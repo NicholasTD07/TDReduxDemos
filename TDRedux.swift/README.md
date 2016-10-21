@@ -1,18 +1,46 @@
 # TDRedux
 
-[![Build Status](https://travis-ci.org/NicholasTD07/TDRedux.swift.svg?branch=master)](https://travis-ci.org/NicholasTD07/TDRedux.swift)
-[![codecov](https://codecov.io/gh/NicholasTD07/TDRedux.swift/branch/master/graph/badge.svg)](https://codecov.io/gh/NicholasTD07/TDRedux.swift)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/v/TDRedux.swift.svg?maxAge=3600)](http://cocoadocs.org/docsets/TDRedux.swift/)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://swift.org/package-manager/)
+
+[![Travis](https://img.shields.io/travis/NicholasTD07/TDRedux.swift/master.svg?maxAge=3600)](https://travis-ci.org/NicholasTD07/TDRedux.swift)
+[![Codecov](https://img.shields.io/codecov/c/github/NicholasTD07/TDRedux.swift/master.svg?maxAge=3600)](https://codecov.io/gh/NicholasTD07/TDRedux.swift)
+[![CocoaPods](https://img.shields.io/cocoapods/p/TDRedux.swift.svg?maxAge=3600)](http://cocoadocs.org/docsets/TDRedux.swift/)
+[![License](https://img.shields.io/github/license/NicholasTD07/TDRedux.swift.svg)](./LICENSE)
 
 
 Yet another Redux written in Swift
 
 ## Installation
 
+### [Swift Package Manager](https://swift.org/package-manager/)
+
+Add this repo as a dependency in your `Package.swift` file, for example:
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "Example",
+    dependencies: [
+        .Package(url: "https://github.com/NicholasTD07/TDRedux.swift.git",
+                 majorVersion: 1),
+    ]
+)
+
+```
+
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 ```
 github "NicholasTD07/TDRedux.swift" ~> 1.0
+```
+
+### [CocoaPods](https://cocoapods.org/)
+
+```ruby
+pod 'TDRedux.swift', '~> 1.0'
 ```
 
 ## TDRedux
@@ -72,7 +100,7 @@ let wrappedReducer: (CounterState?, Any) = Reducer(initialState: 0, reducer: cou
 let counterStore = Store<CounterState>.init(with: wrappedReducer)
 ```
 
-### `combineReducer`
+### `combineReducers`
 
 A helper function which combines an array of *Reducers* into one. For example:
 

@@ -42,7 +42,7 @@ class MiddlewareSpec: QuickSpec {
 
                 it("gets the initial action") {
                     // swiftlint:disable force_cast
-                    expect(dispatchedAction as! InitialAction).toNot(beNil())
+                    expect(dispatchedAction as? InitialAction).toNot(beNil())
                     // swiftlint:enable force_cast
                 }
 
@@ -53,7 +53,7 @@ class MiddlewareSpec: QuickSpec {
 
                     it("gets the action") {
                         // swiftlint:disable force_cast
-                        expect(dispatchedAction as! SomeAction).toNot(beNil())
+                        expect(dispatchedAction as? SomeAction).toNot(beNil())
                         // swiftlint:enable force_cast
                     }
 
@@ -62,7 +62,6 @@ class MiddlewareSpec: QuickSpec {
                     }
                 }
             }
-
 
             context("when dispatched an action") {
                 var middlewares = [String]()
