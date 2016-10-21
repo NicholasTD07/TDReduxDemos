@@ -6,15 +6,19 @@
 //  Copyright © 2016 nicktd. All rights reserved.
 //
 
-import Foundation
 import TDRedux
-
 
 enum ToDoFilter: Int {
     case todo
     case all
     case done
     case archived
+}
+
+enum FetchActions {
+    case start
+    case success
+    case fail
 }
 
 enum ToDoActions: Action {

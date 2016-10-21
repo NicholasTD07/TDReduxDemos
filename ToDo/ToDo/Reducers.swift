@@ -14,7 +14,31 @@ typealias Store = TDRedux.Store<State>
 
 let store = Store.init(with: reducer)
 
-let reducer: Store.Reducer = Reducer(initialState: .initial) { (state, action: ToDoActions) in
+private let reducer = combineReducers([
+    todoReducer,
+    fetchReducer,
+])
+
+private let fetchReducer: Store.Reducer = Reducer(initialState: .initial) { (state, action: FetchActions) in
+    switch action {
+    case .start:
+        return change(to: .fetching, in: state)
+    case .success:
+        return change(to: .fetched, in: state)
+    case .fail:
+        return change(to: .failed, in: state)
+    }
+}
+
+private func change(to fetchState: FetchState, in state: State) -> State {
+    return ToDoState(
+        fetchState: fetchState,
+        todos: state.todos,
+        filter: state.filter
+    )
+}
+
+private let todoReducer: Store.Reducer = Reducer(initialState: .initial) { (state, action: ToDoActions) in
     switch action {
     case let .add(title):
         return addToDo(title: title, to: state)
@@ -32,6 +56,7 @@ let reducer: Store.Reducer = Reducer(initialState: .initial) { (state, action: T
 
 private func addToDo(title: String, to state: State) -> State {
     return ToDoState(
+        fetchState: state.fetchState,
         todos: state.todos + [ToDo(title: title)],
         filter: state.filter
     )
@@ -39,6 +64,7 @@ private func addToDo(title: String, to state: State) -> State {
 
 private func toggleToDo(with id: UUID, in state: State) -> State {
     return ToDoState(
+        fetchState: state.fetchState,
         todos: state.todos.map { todo -> ToDo in
             if todo.id == id {
                 return todo.toggled()
@@ -52,17 +78,23 @@ private func toggleToDo(with id: UUID, in state: State) -> State {
 
 private func removeToDo(with id: UUID, in state: State) -> State {
     return ToDoState(
+        fetchState: state.fetchState,
         todos: state.todos.filter { $0.id != id },
         filter: state.filter
     )
 }
 
 private func filterToDos(with filter: ToDoFilter, in state: State) -> State {
-    return ToDoState(todos: state.todos, filter: filter)
+    return ToDoState(
+        fetchState: state.fetchState,
+        todos: state.todos,
+        filter: filter
+    )
 }
 
 private func archiveToDo(with id: UUID, in state: State) -> State {
     return ToDoState(
+        fetchState: state.fetchState,
         todos: state.todos.map { todo -> ToDo in
             if todo.id == id {
                 return todo.archived(true)

@@ -6,14 +6,14 @@
 //  Copyright © 2016 nicktd. All rights reserved.
 //
 
-import Foundation
-
 struct ToDoState {
+    let fetchState: FetchState
     let todos: [ToDo]
     let filter: ToDoFilter
 
     static let initial = demo // ToDoState(todos: [])
     static let demo = ToDoState(
+        fetchState: .initial,
         todos:
         [
             ("Buy milk", true),

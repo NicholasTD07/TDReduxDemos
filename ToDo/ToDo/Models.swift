@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum FetchState {
+    case initial
+    case fetching
+    case fetched
+    case failed
+}
+
+
 struct ToDo {
     let id: UUID
     let done: Bool
